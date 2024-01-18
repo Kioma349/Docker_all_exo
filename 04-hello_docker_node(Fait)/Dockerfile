@@ -1,9 +1,20 @@
-# Ici j'utilise l'image de base officielle Nginx
-FROM nginx:alpine
+# j' utiliser l'image de base officielle Node.js
+FROM node:14-alpine
 
-# Ici je fait la Copiez du fichier HTML et le fichier audio dans le dossier de contenu du serveur web
-COPY index.html /usr/share/nginx/html/
+# ici je créer un répertoire pour l'application dans le conteneur
+WORKDIR /usr/src/app
 
+# ensuite je copier le fichier package.json et package-lock.json (si disponible)
+COPY package*.json ./
 
-# Enfin j'expose le port 80
+# puis j'installer les dépendances du projet
+RUN npm install
+
+# je Copie les fichiers et dossiers de l'application dans le conteneur
+COPY . .
+
+# enfin j'exposer le port sur lequel l'application va tourner
 EXPOSE 80
+
+# Commande qui me permet de démarrer l'application
+CMD ["node", "server.js"]
