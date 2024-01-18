@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 # Car ses fichiers définissent les dépendances de mon projet Node.js
 
 COPY package.json ./
-COPY package-lock.json* ./
+COPY package-lock.json ./
 
 # Puis j'installe les dépendances du projet
 RUN npm install
