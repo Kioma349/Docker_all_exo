@@ -7,7 +7,7 @@ const pool = new Pool({
   host: 'localhost', // Utilisez 'mon-conteneur-postgres' si vous utilisez Docker Network
   database: 'linus_db',
   password: 'linus1001',
-  port: 5432,
+  port: 3000,
 });
 
 const app = express();
