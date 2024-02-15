@@ -1,14 +1,11 @@
 {
-  "name": "06-hello_multiples",
+  "name": "mon-app-node",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Une simple application Node.js utilisant Express et pg pour se connecter à PostgreSQL",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "pg": "^8.11.3"
