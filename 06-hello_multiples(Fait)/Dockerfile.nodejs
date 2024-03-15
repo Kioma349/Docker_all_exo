@@ -4,8 +4,13 @@ FROM node:14
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copier les fichiers package.json et package-lock.json (si disponible)
-COPY package*.json ./ 
+# Ensuite on copie les fichiers 'package.json' et 'package-lock.json' (s'il existe)
+# Car ses fichiers définissent les dépendances de mon projet Node.js
+# Précision donné par le prof
+# On fige ses fichiers packages et il ne bouge plus pour les autres excution
+
+COPY package.json ./
+COPY package-lock.json ./
 
 # le * est utlisé pour dire de prendre tous les fichiers qui commencent par package et qui se terminent par .json
 
