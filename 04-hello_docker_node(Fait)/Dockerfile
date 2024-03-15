@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Ensuite on copie les fichiers 'package.json' et 'package-lock.json' (s'il existe)
 # Car ses fichiers définissent les dépendances de mon projet Node.js
-#Precision donnée par le prof
+#Precision donné par le prof
 # On fige ses fichiers packages et il ne bouge plus pour les autres excution
 
 COPY package.json ./
