@@ -1,0 +1,15 @@
+version: '3' # je le fais pour spécifié la version de la syntaxe docker-compose que je décide d'utiliser.
+services:
+  metabase:
+    image: metabase/metabase:latest # Je choisis d'utiliser l'image Docker officielle de Metabase avec le tag latest.
+    container_name: metabase # Je nomme le conteneur pour faciliter son identification.
+    ports:
+      - "3000:3000" # Je mappe le port 3000 du conteneur au port 3000 sur ma machine hôte.
+    environment:
+      MB_DB_TYPE: h2 # Je configure Metabase pour utiliser une base de données H2 intégrée.
+      MB_DB_FILE: /metabase-data/metabase.db # Je spécifie l'emplacement du fichier de base de données H2.
+    volumes:
+      - ./metabase-data:/metabase-data # Je monte un volume pour persister les données de Metabase.
+    restart: always # Je configure le conteneur pour qu'il redémarre automatiquement.
+
+
